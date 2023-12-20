@@ -105,14 +105,13 @@ export default function Home() {
           dark:"#335383ff",
           light:"#eeeeeeff"
         }
-
       },(err,url) => {
         if(err) console.log(err)
         else setQr(url);
       })
     }
     useEffect(() => {
-      if(resData._id){
+      if(resData && resData._id){
         generateQR()
       } 
     },[resData])
