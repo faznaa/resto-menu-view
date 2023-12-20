@@ -119,7 +119,7 @@ export default function Home() {
       className={`min-h-screen `}
     >
       <div className='sm:flex items-center'>
-        <div className='w-1/4'> <div className="flex flex-col items-center justify-center">
+        <div className='sm:w-5/12 lg:w-1/4'> <div className="flex flex-col items-center justify-center">
      {/* <LoginBtn /> */}
      <img src={qr}/>
 
@@ -139,7 +139,7 @@ export default function Home() {
 
         
       </div></div>
-        <div className='w-3/4'>      <img src="/images/food1.jpg" alt="pancake" className="w-full object-contain shadow-lg" />
+        <div className='sm:w-7/12 lg:w-3/4'>      <img src="/images/food1.jpg" alt="pancake" className="w-full object-contain shadow-lg" />
 </div>
       </div>
     
