@@ -98,7 +98,7 @@ export default function Home() {
     }
     const [qr,setQr] = useState('' as any)
     const generateQR = async() => {
-      QRCode?.toDataURL(`localhost:3000/menu/view/${resData?._id}`,{
+      QRCode?.toDataURL(`https://beautiful-gaufre-fffa52.netlify.app/menu/view/${resData?._id}`,{
         width:300,
         margin:2,
         color:{
