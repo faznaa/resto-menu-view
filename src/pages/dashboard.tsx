@@ -26,11 +26,11 @@ const Input = ({ label, ...props }:any) => (
 )
 
 const Button = ({ children,href, ...props }:any) => (
-   href ?<Link href={href} download="qr.png"
+   href ?<a href={href} download="qr.png"
    className="rounded-md center text-center bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full"    {...props}
    >
      {children}
-   </Link>:  <button
+   </a>:  <button
     className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full"    {...props}
     >
       {children}

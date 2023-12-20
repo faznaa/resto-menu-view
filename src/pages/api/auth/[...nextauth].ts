@@ -1,6 +1,6 @@
 import NextAuth from "next-auth"
 import GoogleProvider, { type GoogleProfile } from "next-auth/providers/google"
-import GithubProvider from "next-auth/providers/google"
+import GithubProvider from "next-auth/providers/github"
 
 export const authOptions = {
   providers: [
