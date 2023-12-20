@@ -112,8 +112,10 @@ export default function Home() {
       })
     }
     useEffect(() => {
-      generateQR()
-    },[])
+      if(resData._id){
+        generateQR()
+      } 
+    },[resData])
   return (
     <main
       className={`min-h-screen `}
@@ -139,7 +141,7 @@ export default function Home() {
 
         
       </div></div>
-        <div className='sm:w-7/12 lg:w-3/4'>      <img src="/images/food1.jpg" alt="pancake" className="w-full object-contain shadow-lg" />
+        <div className='hidden sm:block sm:w-7/12 lg:w-3/4'>      <img src="/images/food1.jpg" alt="pancake" className="w-full object-contain shadow-lg" />
 </div>
       </div>
     
