@@ -7,6 +7,9 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import { useEffect, useState } from 'react'
 import Modal from '@/components/modal'
 import axios from 'axios'
+// import QRCode from 'react-qr-code'
+import QRCode from 'qrcode'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,13 +25,16 @@ const Input = ({ label, ...props }:any) => (
   </div>
 )
 
-const Button = ({ children, ...props }:any) => (
-  <button
-    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-    {...props}
-  >
-    {children}
-  </button>
+const Button = ({ children,href, ...props }:any) => (
+   href ?<Link href={href} download="qr.png"
+   className="rounded-md center text-center bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full"    {...props}
+   >
+     {children}
+   </Link>:  <button
+    className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 w-full"    {...props}
+    >
+      {children}
+    </button>
 )
 
 const fetcher = (url: string) =>
@@ -90,24 +96,53 @@ export default function Home() {
     const handleChange = (e:any) => {
         setInputData({...inputData,[e.target.name]:e.target.value})
     }
+    const [qr,setQr] = useState('' as any)
+    const generateQR = async() => {
+      QRCode?.toDataURL(`localhost:3000/menu/view/${resData?._id}`,{
+        width:300,
+        margin:2,
+        color:{
+          dark:"#335383ff",
+          light:"#eeeeeeff"
+        }
+
+      },(err,url) => {
+        if(err) console.log(err)
+        else setQr(url);
+      })
+    }
+    useEffect(() => {
+      generateQR()
+    },[])
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      className={`min-h-screen `}
     >
-     <div className="flex flex-col items-center justify-center">
-     <LoginBtn />
+      <div className='sm:flex items-center'>
+        <div className='w-1/4'> <div className="flex flex-col items-center justify-center">
+     {/* <LoginBtn /> */}
+     <img src={qr}/>
 
         {resData ? 
-        <div className='gap-y-4 flex flex-col px-6 '>
+        <div className='w-full gap-y-4 flex flex-col px-4 '>
             {/* {JSON.stringify(resData)} */}
             <Button onClick={() => router.push(`/menu/edit/${resData?._id}`)}>View Menu Items</Button>
             <Button onClick={() => router.push(`/menu/view/${resData?._id}`)}>Get Link</Button>
-            <Button onClick={() => router.push(`/menu/view/${resData?._id}`)}>Generate QR</Button>
-            </div>
+            <Button href={qr} download>Download QR</Button>
+          </div>
         : <Button onClick={() => setOpen(true)}>Create New Restaurant</Button>
         }
+        {/* <a href={qr} download>DOWNLOAD</a> */}
+          {/* <div className='w-full flex justify-center  p-4'>
+            <QRCode value={`localhost:3000/menu/view/${resData?._id}`} />
+            </div> */}
+
         
+      </div></div>
+        <div className='w-3/4'>      <img src="/images/food1.jpg" alt="pancake" className="w-full object-contain shadow-lg" />
+</div>
       </div>
+    
       <Modal open={open} setOpen={setOpen} handleSubmit={handleSubmit} >
         <Input label='Name' id='name' name='name' value={inputData.name} onChange={handleChange} />
         <Input label='Description' id='description' name='description' value={inputData.description} onChange={handleChange} />

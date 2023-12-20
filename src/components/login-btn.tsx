@@ -1,19 +1,18 @@
 import { useSession, signIn, signOut } from "next-auth/react"
+import Link from "next/link"
 
-export default function LoginBtn() {
+export default function LoginBtn({ text }: { text?: string}) {
   const { data: session } = useSession()
   if (session) {
     return (
       <>
-        Signed in as {session.user.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
+      <Link href="/dashboard" className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{"Create Menu"}</Link>
       </>
     )
   }
   return (
     <>
-      Not signed in <br />
-      <button onClick={() => signIn()}>Sign in</button>
+      <button className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onClick={() => signIn()}>{text ? text : "Login"}</button>
     </>
   )
 }
