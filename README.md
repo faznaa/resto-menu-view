@@ -20,6 +20,9 @@ A Nextjs app to create menu, get link, QR Code for your menu.
 - swr
 
 ## Screenshots
-![image alt](https://i.ibb.co/PGFdFJS/Screenshot-2023-12-28-at-17-01-52-https-beautiful-gaufre-fffa52-netlify-app.png)
-![Dashboard](https://i.ibb.co/BKK42FM/Screenshot-2023-12-28-at-17-01-24-https-beautiful-gaufre-fffa52-netlify-app.png)
-![Image 3](https://i.ibb.co/d0YKrHf/Screenshot-2023-12-28-at-16-59-08-https-beautiful-gaufre-fffa52-netlify-app.png)
+#### Home Page
+![Home Page](https://i.ibb.co/PGFdFJS/Screenshot-2023-12-28-at-17-01-52-https-beautiful-gaufre-fffa52-netlify-app.png)
+### Dashboard
+![Dashboard](https://i.ibb.co/d0YKrHf/Screenshot-2023-12-28-at-16-59-08-https-beautiful-gaufre-fffa52-netlify-app.png)
+### Add/ Edit Menu Item
+![Edit/Update](https://i.ibb.co/BKK42FM/Screenshot-2023-12-28-at-17-01-24-https-beautiful-gaufre-fffa52-netlify-app.png)
