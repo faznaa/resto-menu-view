@@ -1,20 +1,5 @@
-## Getting Started
-Copy the contents of .env.sample file to .env and add the values
-
-
-Next, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Resto Menu App
+A Nextjs app to create menu, get link, QR Code for your menu. 
 
 ## Features
 
@@ -24,11 +9,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
  - create menu items
  - update menu items
  - generate link to give to customers
- - generate QR code to customers (In porgress)
+ - You can get the Download the QR code and paste it in your restaurant
+
 
 ## Technologies Used
 
 - Nextjs 
 - GoogleAuth + Next Auth
 - Tailwind UI
-- swr 
+- swr
+
+## Screenshots
+[url=https://ibb.co/chkjkRm][img]https://i.ibb.co/PGFdFJS/Screenshot-2023-12-28-at-17-01-52-https-beautiful-gaufre-fffa52-netlify-app.png[/img][/url]
+[url=https://ibb.co/mFFv5gW][img]https://i.ibb.co/BKK42FM/Screenshot-2023-12-28-at-17-01-24-https-beautiful-gaufre-fffa52-netlify-app.png[/img][/url]
+[url=https://ibb.co/vcCsQZ2][img]https://i.ibb.co/51XYnBq/Screenshot-2023-12-28-at-16-59-19-https-beautiful-gaufre-fffa52-netlify-app.png[/img][/url]
+[url=https://ibb.co/1fW2L40][img]https://i.ibb.co/d0YKrHf/Screenshot-2023-12-28-at-16-59-08-https-beautiful-gaufre-fffa52-netlify-app.png[/img][/url]
