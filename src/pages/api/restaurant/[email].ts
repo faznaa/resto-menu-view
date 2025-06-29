@@ -17,7 +17,8 @@ export default async function handler(
   switch (method) {
     case 'GET' /* Get a model by its ID */:
       try {
-        const menu = await Menu.findOne({ email }).exec()
+        const menu = await Menu.find({ email }).exec()
+        console.log(menu)
         if (!menu) {
           return res.status(400).json({ success: false })
         }

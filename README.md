@@ -11,6 +11,13 @@ A Nextjs app to create menu, get link, QR Code for your menu.
  - generate link to give to customers
  - You can get the Download the QR code and paste it in your restaurant
 
+- properly add auth wrapper
+
+## Custom Menu Creation using DB and AI
+- add data to a db called sample
+- generate api for giving custom menu items
+- categorize menu properly - starters, breakfast, drinks, etc
+
 
 ## Technologies Used
 
